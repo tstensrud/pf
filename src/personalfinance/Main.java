@@ -21,6 +21,8 @@ public class Main {
 		}
 */
 		DatabaseConnection dbCon = new DatabaseConnection();
+	
+		int sumAksjer = dbCon.sumAksjer();
 		
 		//definere hovedvindu og knapper
 		//faner og paneler
@@ -31,7 +33,7 @@ public class Main {
 		JPanel faneOversikt = new JPanel();
  
 		//lables
-		JLabel sumVerdiAksjer = new JLabel("sum aksjer");
+		JLabel sumVerdiAksjer = new JLabel("Aksjeverdi: " + sumAksjer);
 		JLabel sumVerdiGjeld = new JLabel("sum gjeld");
 		
 		//knapper
