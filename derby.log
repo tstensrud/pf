@@ -1,0 +1,13 @@
+----------------------------------------------------------------
+Mon Feb 21 16:24:49 CET 2022:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.15.2.0 - (1873585): instance a816c00e-017f-1ce2-a257-000007003d00 
+on database directory /home/torbjorn/eclipse-workspace/personalfinance/~/eclipse-workspace/personalfinance/aksjedatabase with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@55054057 
+Loaded from file:/home/torbjorn/eclipse-workspace/personalfinance/libs/derby.jar
+java.vendor=Ubuntu
+java.runtime.version=11.0.13+8-Ubuntu-0ubuntu1.20.04
+user.dir=/home/torbjorn/eclipse-workspace/personalfinance
+os.name=Linux
+os.arch=amd64
+os.version=5.4.0-100-generic
+derby.system.home=null
+Database Class Loader started - derby.database.classpath=''
