@@ -28,12 +28,17 @@ public class Main {
 		JTabbedPane faner = new JTabbedPane();
 		JPanel faneAksjer = new JPanel();
 		JPanel faneGjeld = new JPanel();
+		JPanel faneOversikt = new JPanel();
  
+		//lables
+		JLabel sumVerdiAksjer = new JLabel("sum aksjer");
+		JLabel sumVerdiGjeld = new JLabel("sum gjeld");
+		
 		//knapper
 		JButton leggTilAksje = new JButton("Legg til aksje");
 		JButton skrivUtAksjeTabell = new JButton("Print tabell");
 		JButton slettAksje = new JButton("Slett aksje");
- 
+		
 		// tabeller
  
 		String aksjeKolonner[] = {"Aksje","Antall","Verdi"};
@@ -54,6 +59,7 @@ public class Main {
 		//lage hovedvindu
 		hovedvindu.add(faner);
 		faner.setBounds(10,10,400,400);
+		faner.add("Oversikt", faneOversikt);
 		faner.add("Aksjer", faneAksjer);
 		faner.add("Gjeld", faneGjeld);
 		hovedvindu.setSize(440,460);
@@ -61,7 +67,11 @@ public class Main {
 		hovedvindu.setLayout(null);
 		hovedvindu.setVisible(true);
 		hovedvindu.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
- 
+		
+		//fane oversikt
+		faneOversikt.add(sumVerdiGjeld);
+		faneOversikt.add(sumVerdiAksjer);
+		
 		//fane aksjer
 		faneAksjer.add(leggTilAksje);
 		faneAksjer.add(skrivUtAksjeTabell);
@@ -69,6 +79,8 @@ public class Main {
 		faneAksjer.add(aksjeSp);
  
 		dbCon.hentAksje("TSLA");
+		
+		System.out.println(dbCon.sumAksjer());
  
 		// lytter ny aksje
 		leggTilAksje.addActionListener(new ActionListener() {

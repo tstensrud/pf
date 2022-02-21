@@ -51,7 +51,27 @@ public class DatabaseConnection {
 			e.printStackTrace();
 		}
 	}
- 
+	
+	//metode for å returnere total verdi av aksjer
+	public int sumAksjer() {
+		int sum = 0;
+		try {
+			Connection connection = DriverManager.getConnection(connectionUrl);
+			Statement sumAksjer = connection.createStatement();
+			
+			ResultSet resultSet = sumAksjer.executeQuery("SELECT verdi from Aksjer");
+			
+			while(resultSet.next()) {
+				sum += Integer.parseInt(resultSet.getString("verdi"));
+				
+			}
+		}
+		catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return sum;
+	}
  
 	// søker om aksje finnes
 	public boolean sokAksjeNavn(String input) {
